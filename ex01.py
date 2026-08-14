@@ -1,8 +1,16 @@
 ###################################################
-# Aplicativo Modelo                               #
-# `agenda_furreca.py` → Link                      #
-# Fazer os desafios BÁSICO e INTERMEDIÁRIO → Link #
-# Exercício - Criação de aplicativo               #
+# Exercício - Criação de Aplicativo               #
+#                                                 #
+# Aplicativo: Calculadora                         #
+#                                                 #
+# Operações disponíveis:                          #
+# - Soma                                          #
+# - Subtração                                     #
+# - Multiplicação                                 #
+# - Divisão                                       #
+#                                                 #
+# Turma: 2026.3                                   #
+# Aluno: Vitor Assis                              #
 ###################################################
 
 # Função responsável por somar dois valores
