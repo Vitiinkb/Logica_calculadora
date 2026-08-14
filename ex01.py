@@ -1,3 +1,4 @@
+
 ###################################################
 # Exercício - Criação de Aplicativo               #
 #                                                 #
@@ -13,54 +14,58 @@
 # Aluno: Vitor Assis                              #
 ###################################################
 
-# Função responsável por somar dois valores
+import os
+
+# Função para limpar a tela
+def limpar_tela():
+    os.system("cls")
+
+
+# Função para somar
 def somar(valor1, valor2):
     return valor1 + valor2
 
 
-# Função responsável por subtrair dois valores
+# Função para subtrair
 def subtrair(valor1, valor2):
     return valor1 - valor2
 
 
-# Função responsável por multiplicar dois valores
+# Função para multiplicar
 def multiplicar(valor1, valor2):
     return valor1 * valor2
 
 
-# Função responsável por dividir dois valores
+# Função para dividir
 def dividir(valor1, valor2):
 
-    # Verifica se o segundo valor é zero
+    # Não permite divisão por zero
     if valor2 == 0:
         return None
 
     return valor1 / valor2
 
 
-# Função responsável por receber os valores digitados pelo usuário
+# Função para receber valores
 def ler_valor(mensagem):
 
-    # Continua pedindo o valor até o usuário digitar um número válido
     while True:
 
         try:
-            # Converte o valor digitado para float
             return float(input(mensagem))
 
         except ValueError:
-            # Mensagem exibida caso o usuário digite um valor inválido
             print("Valor inválido! Digite um número.")
 
 
-# Função principal do programa
+# Função principal
 def main():
 
-    # Mantém o programa funcionando até o usuário escolher sair
     while True:
 
-        # Exibe o menu da calculadora
-        print("\n===== CALCULADORA =====")
+        limpar_tela()
+
+        print("===== CALCULADORA =====")
         print("1 - Somar")
         print("2 - Subtrair")
         print("3 - Multiplicar")
@@ -68,50 +73,50 @@ def main():
         print("5 - Sair")
         print("=======================")
 
-        # Recebe a opção escolhida pelo usuário
         opcao = input("Escolha uma opção: ")
 
-        # Encerra o programa caso o usuário escolha 5
+        # Opção para sair
         if opcao == "5":
             print("Calculadora encerrada!")
             break
 
-        # Verifica se a opção escolhida é válida
+        # Verifica se a opção é válida
         if opcao not in ["1", "2", "3", "4"]:
-            print("Opção inválida! Escolha uma opção de 1 a 5.")
+            print("Opção inválida!")
+            input("\nPressione ENTER para continuar...")
             continue
 
-        # Solicita o primeiro valor
+        # Entrada dos valores
         valor1 = ler_valor("Digite o primeiro valor: ")
-
-        # Solicita o segundo valor
         valor2 = ler_valor("Digite o segundo valor: ")
 
-        # Realiza a soma
+        # Soma
         if opcao == "1":
             resultado = somar(valor1, valor2)
-            print(f"Resultado: {resultado}")
+            print(f"\nResultado: {resultado}")
 
-        # Realiza a subtração
+        # Subtração
         elif opcao == "2":
             resultado = subtrair(valor1, valor2)
-            print(f"Resultado: {resultado}")
+            print(f"\nResultado: {resultado}")
 
-        # Realiza a multiplicação
+        # Multiplicação
         elif opcao == "3":
             resultado = multiplicar(valor1, valor2)
-            print(f"Resultado: {resultado}")
+            print(f"\nResultado: {resultado}")
 
-        # Realiza a divisão
+        # Divisão
         elif opcao == "4":
             resultado = dividir(valor1, valor2)
 
-            # Verifica se houve tentativa de divisão por zero
             if resultado is None:
-                print("Erro: não é possível dividir por zero!")
+                print("\nErro: não é possível dividir por zero!")
             else:
-                print(f"Resultado: {resultado}")
+                print(f"\nResultado: {resultado}")
+
+        # Aguarda o usuário apertar ENTER antes de voltar ao menu
+        input("\nPressione ENTER para voltar ao menu...")
 
 
-# Inicia o programa chamando a função principal
+# Inicia o programa
 main()
